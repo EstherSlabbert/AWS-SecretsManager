@@ -187,6 +187,8 @@ To get started with AWS Secrets Manager:
 5. If other users or applications need to retrieve the secret, write an IAM policy to grant permissions to the secret.
 6. Update your applications to retrieve secrets from Secrets Manager.
 
+Alternatively use Terraform. [Terraform: Secrets Manager Upload Secret](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret), [Terraform: Secrets Manager Set Secret IAM Policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_policy).
+
 <p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
 ## Cost
