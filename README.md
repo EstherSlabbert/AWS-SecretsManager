@@ -35,6 +35,8 @@ AWS Secrets Manager **encrypts at rest** using encryption keys that you own and 
 - Ensures in transit security
 - Can configure to automatically rotate secrets using custom Lambda functions if not for AWS data service (good practice)
 
+[See Data protection in Secrets Manager: Encryption in transit and Encryption at rest](https://docs.aws.amazon.com/secretsmanager/latest/userguide/data-protection.html)
+
 <p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
 ## How does AWS Secrets Manager encrypt my secrets?
