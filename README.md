@@ -1,6 +1,10 @@
 # AWS Secrets Manager
 
-[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+[AWS Secrets Manager documentation](https://aws.amazon.com/secrets-manager/)
+
+[AWS Tech Talks - Secrets Manager video](https://www.youtube.com/watch?v=Y3Gn_iP3FlE)
+
+[Secrets Manager Overview with Demo video](https://www.youtube.com/watch?v=GwVWWn2ZKj0)
 
 - [AWS Secrets Manager](#aws-secrets-manager)
   - [What is it?](#what-is-it)
