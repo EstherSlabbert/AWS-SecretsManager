@@ -22,6 +22,8 @@ AWS Secrets Manager is a **secrets management service** that helps you protect a
 
 [What is Secrets Manager?](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
 
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
+
 ## How does AWS Secrets Manager keep my secrets secure?
 
 AWS Secrets Manager **encrypts at rest** using encryption keys that you own and store in AWS Key Management Service (KMS). You can **control access to the secret using AWS Identity and Access Management (IAM) policies**. When you **retrieve a secret**, Secrets Manager **decrypts the secret and transmits it securely over TLS to your local environment**. By default, Secrets Manager does not write or cache the secret to persistent storage.
@@ -33,6 +35,8 @@ AWS Secrets Manager **encrypts at rest** using encryption keys that you own and 
 - Ensures in transit security
 - Can configure to automatically rotate secrets using custom Lambda functions if not for AWS data service (good practice)
 
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
+
 ## How does AWS Secrets Manager encrypt my secrets?
 
 AWS Secrets Manager uses [**envelope encryption (AES-256 encryption algorithm)**](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#enveloping) to encrypt your **secrets in AWS Key Management Service (KMS)**.
@@ -42,11 +46,15 @@ Secrets Manager **supports only symmetric encryption KMS keys**. If you use a KM
 
 [More on Encryption and Decryption with Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html)
 
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
+
 ## Why use it?
 
 AWS Secrets Manager protects access to your applications, services, and IT resources, without the upfront investment and on-going maintenance costs of operating your own infrastructure.
 
 Secrets Manager is for IT administrators looking for a secure and scalable method to store and manage secrets. Security administrators responsible for meeting regulatory and compliance requirements can use Secrets Manager to monitor secrets and rotate secrets without a risk of impacting applications. Developers who want to replace hardcoded secrets in their applications can retrieve secrets programmatically from Secrets Manager.
+
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
 ### Benefits
 
@@ -155,12 +163,16 @@ output "secret_value" {
 ```
 -->
 
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
+
 ### Drawbacks
 
 - Cost
 - Must use policies to grant/deny granular permissions
 - Must create/upload secrets one by one (AWS Secrets Manager does not provide a native capability to upload multiple secrets in a single operation. Each secret needs to be uploaded individually using the appropriate API or SDK calls. If you have multiple secrets that you want to upload to AWS Secrets Manager, you would need to write code or use automation tools to loop through your secrets and upload them one by one.)
 - Probably need to update current coded secrets to retrieve them from Secrets Manager instead of current location
+
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
 ## How to use it?
 
@@ -172,6 +184,8 @@ To get started with AWS Secrets Manager:
 4. If your secret is not in use yet, follow the instructions on the console to configure automatic rotation. If applications are using your secret, complete steps (5) and (6) before configuring automatic rotation.
 5. If other users or applications need to retrieve the secret, write an IAM policy to grant permissions to the secret.
 6. Update your applications to retrieve secrets from Secrets Manager.
+
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
 ## Cost
 
@@ -188,3 +202,5 @@ Note: Each AWS KMS key that you create in AWS KMS costs $1/month (prorated hourl
 ---
 
 [Secrets Manager Pricing](https://aws.amazon.com/secrets-manager/pricing/)
+
+<p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
