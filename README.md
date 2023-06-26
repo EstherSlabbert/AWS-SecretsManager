@@ -30,12 +30,20 @@ AWS Secrets Manager **encrypts at rest** using encryption keys that you own and 
 
 - SM encrypts data (stored as plain text or JSON) using KMS (may use default CMK or customer-created CMK)
 - Attach an IAM policy (granularly) to your application for read-only permissions to your secret
-- Only accepts requests from host using open standard Transport Layer Security (TLS) and perfect forward secrecy (When you retrieve a secret through an API call, Secrets Manager decrypts the secret and transmits it securely over TLS to your local environment. By default, Secrets Manager does not write or cache the secret to persistent storage.)
+- Only accepts requests from host using open standard Transport Layer Security (TLS) and perfect forward secrecy (When you retrieve a secret through an API call, Secrets Manager decrypts the secret and transmits it securely over [TLS 1.2 or above](https://aws.amazon.com/blogs/security/tls-1-2-required-for-aws-endpoints/) to your local environment. By default, Secrets Manager does not write or cache the secret to persistent storage.)
 - AWS gives sample code for different programming languages to access the secret.
 - Ensures in transit security
 - Can configure to automatically rotate secrets using custom Lambda functions if not for AWS data service (good practice)
 
 [See Data protection in Secrets Manager: Encryption in transit and Encryption at rest](https://docs.aws.amazon.com/secretsmanager/latest/userguide/data-protection.html)
+
+[SSL vs TSL](https://aws.amazon.com/compare/the-difference-between-ssl-and-tls/#:~:text=SSL%20is%20technology%20your%20applications,that%20fixes%20existing%20SSL%20vulnerabilities.)
+
+[UK gov: documentation on TSL](https://www.gov.uk/government/publications/email-security-standards/transport-layer-security-tls)
+
+[Cloudfare: TSL](https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/)
+
+[More on SSL/TSL Certificates](https://aws.amazon.com/what-is/ssl-certificate/)
 
 <p align="right">(<a href="#aws-secrets-manager">back to top</a>)</p>
 
@@ -169,7 +177,7 @@ output "secret_value" {
 
 ### Drawbacks
 
-- Cost
+- Cost (see [Cost section](#cost) for details)
 - Must use policies to grant/deny granular permissions
 - Must create/upload secrets one by one (AWS Secrets Manager does not provide a native capability to upload multiple secrets in a single operation. Each secret needs to be uploaded individually using the appropriate API or SDK calls. If you have multiple secrets that you want to upload to AWS Secrets Manager, you would need to write code or use automation tools to loop through your secrets and upload them one by one.)
 - Probably need to update current coded secrets to retrieve them from Secrets Manager instead of current location
